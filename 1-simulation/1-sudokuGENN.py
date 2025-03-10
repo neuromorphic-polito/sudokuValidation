@@ -525,7 +525,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-d', '--difficulty', help='Puzzle difficulty level', type=str, default='easy')
     parser.add_argument('-p', '--puzzle', help='Puzzle type', type=int, default=1)
-    parser.add_argument('-t', '--trials', help='Attempt of resolution', type=int, default=300)
+    parser.add_argument('-t', '--trials', help='Attempt of resolution', type=int, default=301)
     parser.add_argument('-b', '--bugFix', help='Bug fix for changing state of original problem', type=int, default=0)
     parser.add_argument('-e', '--enhanced', help='Use the enhanced pipeline', type=int, default=0)
     parser.add_argument('-w', '--binWidth', help='Binning width', type=int, default=100)

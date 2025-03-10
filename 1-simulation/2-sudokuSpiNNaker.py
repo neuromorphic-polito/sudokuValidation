@@ -41,7 +41,7 @@ def main(argument):
     (sudokuPop, sudoku, sudokuSol) = puzzle[argument.puzzle]
     sudoku = np.array(sudoku)
     timeSimulation = 60  # s
-    timeSteps = int(timeSimulation * 1e3)
+    timeSteps = int(timeSimulation*1e3)
 
     ################################
     # ##### Model definition ##### #
@@ -108,7 +108,7 @@ def main(argument):
     ##### Var-Var internal inhibition #####
     for row in range(variables):
         for col in range(variables):
-            synapsesInhib = np.random.uniform(low=-0.2/2.5, high=0.0, size=(variables*solverPop, variables*solverPop))
+            synapsesInhib = np.random.uniform(low=-0.08, high=0.0, size=(variables*solverPop, variables*solverPop))
             for i in range(variables):
                 synapsesInhib[i*solverPop:(i+1)*solverPop, i*solverPop:(i+1)*solverPop] = 0
             synapsesInhibList = []
@@ -135,7 +135,7 @@ def main(argument):
         if sudoku[rowTo][colTo] == 0 or argument.bugFix == 0:
             synapsesInhib = np.zeros(shape=(variables*solverPop, variables*solverPop))
             for i in range(variables):
-                synapsesInhib[i*solverPop:(i+1)*solverPop, i*solverPop:(i+1)*solverPop] = np.random.uniform(low=-0.2/2.5, high=0.0, size=(solverPop, solverPop))
+                synapsesInhib[i*solverPop:(i+1)*solverPop, i*solverPop:(i+1)*solverPop] = np.random.uniform(low=-0.08, high=0.0, size=(solverPop, solverPop))
             synapsesInhibList = []
             for so in range(variables*solverPop):
                 for to in range(variables*solverPop):
@@ -194,7 +194,7 @@ def main(argument):
         ##### Polisher-Polisher internal inhibition #####
         for row in range(variables):
             for col in range(variables):
-                synapsesInhib = np.ones(shape=(variables*validationPop, variables*validationPop))*-1.0
+                synapsesInhib = -1.0*np.ones(shape=(variables*validationPop, variables*validationPop))
                 for i in range(variables):
                     synapsesInhib[i*validationPop:(i+1)*validationPop, i*validationPop:(i+1)*validationPop] = 0.0
                 synapsesInhibList = []
@@ -284,7 +284,7 @@ def main(argument):
         ##### NetChecker-NetChecker inhibition #####
         for c in range(3):
             for v in range(variables):
-                synapsesInhib = np.ones(shape=((variables+1)*validationPop, (variables+1)*validationPop))*-1.2
+                synapsesInhib = -1.2*np.ones(shape=((variables+1)*validationPop, (variables+1)*validationPop))
                 for i in range(variables+1):
                     synapsesInhib[i*validationPop:(i+1)*validationPop, i*validationPop:(i+1)*validationPop] = 0.0
                 synapsesInhibList = []
@@ -323,7 +323,7 @@ def main(argument):
                 )
 
         ##### If-If excitation #####
-        synapsesExcit = np.zeros(shape=(2 * validationPop, 2 * validationPop))
+        synapsesExcit = np.zeros(shape=(2*validationPop, 2*validationPop))
         synapsesExcit[0:validationPop, 0:validationPop] = 1.1
         synapsesExcitList = []
         for so in range(2*validationPop):
@@ -337,7 +337,7 @@ def main(argument):
         )
 
         ##### If-If inhibition #####
-        synapsesInhib = np.zeros(shape=(2 * validationPop, 2 * validationPop))
+        synapsesInhib = np.zeros(shape=(2*validationPop, 2*validationPop))
         synapsesInhib[0:validationPop, validationPop:] = -1.0
         synapsesInhib[validationPop:, 0:validationPop] = -1.0
         synapsesInhibList = []
@@ -470,7 +470,7 @@ def main(argument):
         ##### Mem-Mem lateral inhibition #####
         for row in range(variables):
             for col in range(variables):
-                synapsesInhib = np.ones(shape=(variables*memoryPop, variables*memoryPop))*-0.3
+                synapsesInhib = -0.3*np.ones(shape=(variables*memoryPop, variables*memoryPop))
                 for i in range(variables):
                     synapsesInhib[i*memoryPop:(i+1)*memoryPop, i*memoryPop:(i+1)*memoryPop] = 0.0
                 synapsesInhibList = []
@@ -513,7 +513,7 @@ def main(argument):
     ########################
     binWidth = 100
     assert timeSteps % binWidth == 0
-    binsTime = np.arange(0, timeSteps + binWidth, binWidth)
+    binsTime = np.arange(0, timeSteps+binWidth, binWidth)
 
     flagSol, timeExtraction, spikeCount = 0, 0, 0
     if argument.enhanced == 0:
