@@ -45,7 +45,6 @@ The project makes use of the virtual environment creator conda.
 
 Clone git repo:
 ```
-git lfs install
 git clone https://github.com/neuromorphic-polito/sudokuValidation.git
 ```
 Conda installation:
