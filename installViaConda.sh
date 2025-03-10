@@ -29,11 +29,11 @@ if $flagConda
 then
     # Installing enviroment via CONDA
     source /home/$USER/miniconda3/etc/profile.d/conda.sh
-    conda create --name csp python=3.12.1
+    conda create --name csp python=3.13.1
     conda activate csp
 
     # Installing GeNN
-    echo "conda activate ego"
+    echo "conda activate csp"
     echo "sudo apt update"
     echo "sudo apt install g++"
     echo "https://developer.nvidia.com/cuda-downloads"
@@ -51,7 +51,7 @@ then
     pip install notebook
     python -m ipykernel install --user --name=cspPy312
     pip install nni
-    
+
     # Setting SpiNNaker 8
     echo ""
     echo "python"

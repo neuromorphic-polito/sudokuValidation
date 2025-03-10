@@ -110,7 +110,7 @@ def main(argument):
         ##### Var-Var internal inhibition #####
         for row in range(variables):
             for col in range(variables):
-                synapsesInhib = np.random.uniform(low=-0.2/2.5, high=0.0, size=(variables*solverPop, variables*solverPop))
+                synapsesInhib = np.random.uniform(low=-0.08, high=0.0, size=(variables*solverPop, variables*solverPop))
                 for i in range(variables):
                     synapsesInhib[i*solverPop:(i+1)*solverPop, i*solverPop:(i+1)*solverPop] = 0
                 model.add_synapse_population(
@@ -133,7 +133,7 @@ def main(argument):
             if sudoku[rowTo][colTo] == 0 or argument.bugFix == 0:
                 synapsesInhib = np.zeros(shape=(variables*solverPop, variables*solverPop))
                 for i in range(variables):
-                    synapsesInhib[i*solverPop:(i+1)*solverPop, i*solverPop:(i+1)*solverPop] = np.random.uniform(low=-0.2/2.5, high=0.0, size=(solverPop, solverPop))
+                    synapsesInhib[i*solverPop:(i+1)*solverPop, i*solverPop:(i+1)*solverPop] = np.random.uniform(low=-0.08, high=0.0, size=(solverPop, solverPop))
                 model.add_synapse_population(
                     pop_name=f'lateralInhib{rowSo}{colSo}{rowTo}{colTo}', matrix_type='DENSE',
                     source=popVar[rowSo][colSo], target=popVar[rowTo][colTo],
@@ -185,7 +185,7 @@ def main(argument):
             ##### Polisher-Polisher internal inhibition #####
             for row in range(variables):
                 for col in range(variables):
-                    synapsesInhib = np.ones(shape=(variables*validationPop, variables*validationPop))*-1.0
+                    synapsesInhib = -1.0*np.ones(shape=(variables*validationPop, variables*validationPop))
                     for i in range(variables):
                         synapsesInhib[i*validationPop:(i+1)*validationPop, i*validationPop:(i+1)*validationPop] = 0.0
                     model.add_synapse_population(
@@ -259,7 +259,7 @@ def main(argument):
             ##### NetChecker-NetChecker inhibition #####
             for c in range(3):
                 for v in range(variables):
-                    synapsesInhib = np.ones(shape=((variables+1)*validationPop, (variables+1)*validationPop))*-1.2
+                    synapsesInhib = -1.2*np.ones(shape=((variables+1)*validationPop, (variables+1)*validationPop))
                     for i in range(variables+1):
                         synapsesInhib[i*validationPop:(i+1)*validationPop, i*validationPop:(i+1)*validationPop] = 0.0
                     model.add_synapse_population(
@@ -368,7 +368,7 @@ def main(argument):
             ##### Mem-Mem lateral inhibition #####
             for row in range(variables):
                 for col in range(variables):
-                    synapsesInhib = np.ones(shape=(variables*memoryPop, variables*memoryPop))*-0.3
+                    synapsesInhib = -0.3*np.ones(shape=(variables*memoryPop, variables*memoryPop))
                     for i in range(variables):
                         synapsesInhib[i*memoryPop:(i+1)*memoryPop, i*memoryPop:(i+1)*memoryPop] = 0.0
                     model.add_synapse_population(
@@ -526,8 +526,8 @@ if __name__ == '__main__':
     parser.add_argument('-d', '--difficulty', help='Puzzle difficulty level', type=str, default='easy')
     parser.add_argument('-p', '--puzzle', help='Puzzle type', type=int, default=1)
     parser.add_argument('-t', '--trials', help='Attempt of resolution', type=int, default=300)
-    parser.add_argument('-b', '--bugFix', help='Bug fix for changing state of original problem', type=int, default=1)
-    parser.add_argument('-e', '--enhanced', help='Use the enhanced pipeline', type=int, default=1)
+    parser.add_argument('-b', '--bugFix', help='Bug fix for changing state of original problem', type=int, default=0)
+    parser.add_argument('-e', '--enhanced', help='Use the enhanced pipeline', type=int, default=0)
     parser.add_argument('-w', '--binWidth', help='Binning width', type=int, default=100)
     parser.add_argument('-g', '--gpu', help='GPU or CPU mode', type=int, default=1)
 
