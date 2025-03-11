@@ -7,9 +7,9 @@ Over the years, numerous methods have been developed to address optimization. Am
 
 CSPs are a specific type of optimization problems which belong to the NP-complete set. Their mathematical formulation is based on the triplet $\langle X, D, C \rangle$ where:
 
-- $X=\{X_1, X_2, ..., X_n\}$ describes the set of variables present in the problem;
-- $D=\{D_1, D_2, ..., D_n\}$ describes the set of domains the variables belong to;
-- $C=\{C_1, C_2, ..., C_n\}$ defines the set of constraints.
+- $X={X_1, X_2, ..., X_n}$ describes the set of variables present in the problem;
+- $D={D_1, D_2, ..., D_n}$ describes the set of domains the variables belong to;
+- $C={C_1, C_2, ..., C_n}$ defines the set of constraints.
 
 
 Among the above mentioned examples of CSP, the Latin Square problem consists of a matrix with $n \times n$ cells, partially filled with $n$ different elements, such that once solved each symbol appears in each row and column only once. In the Sudoku variant, the structure is constituted by a square of $9 \times 9$ cells, subdivided into $9$ blocks of $3 \times 3$ sub-squares. Each cell of the Sudoku puzzles must be filled in with numbers from $1$ to $9$. Solutions to Sudoku puzzles and other CSPs can be investigated by means of SNNs [[1]](#1), [[2]](#2), [[3]](#3), [[4]](#4), [[5]](#5), [[6]](#6) by replacing the standard nonlinearity adopted in ANNs through perceptron-based units with bioinspired elements such as leaky integrate-and-fire (LIF) neurons. A generalized formulation for CSP mapping onto SNNs was shown by Jonke et al. in [[2]](#2), where a methodology to model the energy landscape of a given problem through the topological structure of a neuromorphic model was proposed. The resulting dynamics of the network corresponds to a dynamical system with a temporal evolution described through an attractor model [[10]](#10), with a continuous exploration of possible states related to the original problem, whose fixed points correspond to the possible solutions.
@@ -90,5 +90,4 @@ Formato BibTeX:
 - riccardo.pignari@polito.it
 - vittorio.fra@polito.it
 - gianvito.urgese@polito.it
-- enrico.macii@polito.it
  
