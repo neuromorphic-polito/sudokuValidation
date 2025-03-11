@@ -20,7 +20,7 @@ Nonetheless, some limitations can be identified which partially limit the prospe
 Further studies [[7]](#7), [[8]](#8), [[9]](#9) have also investigated neuromorphic approaches to the solution of the Latin square problem, exploring different methodologies and platforms and validating the efficacy of novel neuron models in the domain of CSPs.
 
 <center>
-    <img src="article/image/pipeline.png">
+    <img src="article/image/pipelineGithub.png">
 </center>
 
 Impact Statement - This project introduces a novel approach for solving Constraint Satisfaction Problems using Spiking Neural Networks (SNNs) with neuromorphic tools like the GeNN framework and SpiNNaker platform. It presents a fully spiking pipeline incorporating constraint stabilization, neuron idling, and built-in validation to enhance efficiency in SNN-based Sudoku solvers. The approach significantly reduces extracted spikes (54.63%–99.98%) and extraction time (88.56%–96.41%), leading to improved energy efficiency and computational performance. The findings highlight the potential of neuromorphic hardware for implementing effective, low-power solutions applicable to AI, IoT, and Industry 4.0.
