@@ -19,12 +19,11 @@ Nonetheless, some limitations can be identified which partially limit the prospe
 
 Further studies [[7]](#7), [[8]](#8), [[9]](#9) have also investigated neuromorphic approaches to the solution of the Latin square problem, exploring different methodologies and platforms and validating the efficacy of novel neuron models in the domain of CSPs.
 
-This work presents a novel approach to address Constraint Satisfaction Problems through Spiking Neural Networks (SNNs) utilising neuromorphic tools like the GeNN framework and the SpiNNaker platform. We propose a new fully spiking pipeline that incorporates a constraint stabilization strategy, a neuron idling mechanism, and a built-in validation procedure. Our pipeline targets efficiency and performance of SNN-based solvers for Sudoku puzzles, leading to improvements in success rates and data transmission compared to previous solutions. Specifically, the reduction of extracted spikes, ranging from 54.63\% to 99.98\%, provides extraction time reduced by values between 88.56\% and 96.41\%. This results in significant enhancements in terms of energy efficiency and computational performance. Therefore, we show further evidence of the potential advantages of brain-inspired approaches that rely on neuromorphic HW for implementing effective and low-power solutions, which are suitable for real-world problems that characterise constrained key technological domains such as AI, IoT and Industry 4.0.
-
 <center>
     <img src="article/image/pipeline.png">
 </center>
 
+Impact Statement - This project introduces a novel approach for solving Constraint Satisfaction Problems using Spiking Neural Networks (SNNs) with neuromorphic tools like the GeNN framework and SpiNNaker platform. It presents a fully spiking pipeline incorporating constraint stabilization, neuron idling, and built-in validation to enhance efficiency in SNN-based Sudoku solvers. The approach significantly reduces extracted spikes (54.63%–99.98%) and extraction time (88.56%–96.41%), leading to improved energy efficiency and computational performance. The findings highlight the potential of neuromorphic hardware for implementing effective, low-power solutions applicable to AI, IoT, and Industry 4.0.
 
 ### Reference
 The reference material used to develop the research is obtained from:
