@@ -79,7 +79,7 @@ def sudokuSolver():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -88,8 +88,8 @@ def sudokuSolver():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -113,7 +113,7 @@ def sudokuSolver():
                 pop_name=f'var{row}{col}',
                 num_neurons=variables*solverPop,
                 neuron='LIF',
-                params=paramLif, vars=varLif
+                params=lifParam, vars=lifVar
             )
             popVar[row][col].spike_recording_enabled = True
 

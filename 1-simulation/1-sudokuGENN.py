@@ -51,7 +51,7 @@ def main(argument):
         model.dt = 1.0  # ms
 
         ##### Neuron parameters #####
-        paramLif = {
+        lifParam = {
             'C': 0.25,  # nF
             'TauM': 20.0,  # ms
             'Ioffset': 0.3,  # nA
@@ -60,8 +60,8 @@ def main(argument):
             'Vreset': -70.0,  # mV
             'TauRefrac': 2.0,  # ms
         }
-        varLif = {
-            'V': paramLif['Vrest'],  # mV
+        lifVar = {
+            'V': lifParam['Vrest'],  # mV
             'RefracTime': 0.0,  # ms
         }
 
@@ -85,7 +85,7 @@ def main(argument):
                     pop_name=f'var{row}{col}',
                     num_neurons=variables*solverPop,
                     neuron='LIF',
-                    params=paramLif, vars=varLif
+                    params=lifParam, vars=lifVar
                 )
                 popVar[row][col].spike_recording_enabled = True
 
@@ -144,7 +144,7 @@ def main(argument):
         if argument.enhanced == 1:
             # ##### Validation network ##### #
             ##### Neuron parameters #####
-            paramLif['Ioffset'] = 0.1
+            lifParam['Ioffset'] = 0.1
             validationPop = 10
 
             # ##### Neuron populations ##### #
@@ -155,7 +155,7 @@ def main(argument):
                         pop_name=f'polisher{row}{col}',
                         num_neurons=variables*validationPop,
                         neuron='LIF',
-                        params=paramLif, vars=varLif
+                        params=lifParam, vars=lifVar
                     )
 
             popNetChecker = [[0 for _ in range(variables)] for _ in range(3)]
@@ -165,7 +165,7 @@ def main(argument):
                         pop_name=f'netChecker{c}{v}',
                         num_neurons=(variables+1)*validationPop,
                         neuron='LIF',
-                        params=paramLif, vars=varLif
+                        params=lifParam, vars=lifVar
                     )
                     popNetChecker[c][v].spike_recording_enabled = True
 
@@ -274,7 +274,7 @@ def main(argument):
                 pop_name=f'if',
                 num_neurons=2*validationPop,
                 neuron='LIF',
-                params=paramLif, vars=varLif
+                params=lifParam, vars=lifVar
             )
             popIf.spike_recording_enabled = True
 
@@ -335,7 +335,7 @@ def main(argument):
                         pop_name=f'mem{row}{col}',
                         num_neurons=variables*memoryPop,
                         neuron='LIF',
-                        params=paramLif, vars=varLif
+                        params=lifParam, vars=lifVar
                     )
                     popMem[row][col].spike_recording_enabled = True
 

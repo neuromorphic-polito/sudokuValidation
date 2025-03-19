@@ -125,7 +125,7 @@ def singleNodeWithoutStimulation():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -134,8 +134,8 @@ def singleNodeWithoutStimulation():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -147,7 +147,7 @@ def singleNodeWithoutStimulation():
         pop_name='popVar',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar.spike_recording_enabled = True
 
@@ -269,7 +269,7 @@ def singleNodeWithOneStimulation():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -278,8 +278,8 @@ def singleNodeWithOneStimulation():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -298,7 +298,7 @@ def singleNodeWithOneStimulation():
         pop_name='popVar',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar.spike_recording_enabled = True
 
@@ -431,7 +431,7 @@ def singleNodeWithAllStimulation():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -440,8 +440,8 @@ def singleNodeWithAllStimulation():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -460,7 +460,7 @@ def singleNodeWithAllStimulation():
         pop_name='popVar',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar.spike_recording_enabled = True
 
@@ -645,7 +645,7 @@ def twoNodesWithOneStimulation():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -654,8 +654,8 @@ def twoNodesWithOneStimulation():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -674,7 +674,7 @@ def twoNodesWithOneStimulation():
         pop_name='popVar1',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar1.spike_recording_enabled = True
 
@@ -689,7 +689,7 @@ def twoNodesWithOneStimulation():
         pop_name='popVar2',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar2.spike_recording_enabled = True
 
@@ -939,7 +939,7 @@ def twoNodesWithTwoStimulation():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -948,8 +948,8 @@ def twoNodesWithTwoStimulation():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -968,7 +968,7 @@ def twoNodesWithTwoStimulation():
         pop_name='popVar1',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar1.spike_recording_enabled = True
 
@@ -983,7 +983,7 @@ def twoNodesWithTwoStimulation():
         pop_name='popVar2',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar2.spike_recording_enabled = True
 
@@ -1230,7 +1230,7 @@ def twoNodesWithAllStimulation():
     model.dt = 1.0  # ms
 
     ##### Neuron parameters #####
-    paramLif = {
+    lifParam = {
         'C': 0.25,  # nF
         'TauM': 20.0,  # ms
         'Ioffset': 0.3,  # nA
@@ -1239,8 +1239,8 @@ def twoNodesWithAllStimulation():
         'Vreset': -70.0,  # mV
         'TauRefrac': 2.0,  # ms
     }
-    varLif = {
-        'V': paramLif['Vrest'],  # mV
+    lifVar = {
+        'V': lifParam['Vrest'],  # mV
         'RefracTime': 0.0,  # ms
     }
 
@@ -1260,7 +1260,7 @@ def twoNodesWithAllStimulation():
         pop_name='popVar1',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar1.spike_recording_enabled = True
 
@@ -1275,7 +1275,7 @@ def twoNodesWithAllStimulation():
         pop_name='popVar2',
         num_neurons=neuronsVar*neuronsPop,
         neuron='LIF',
-        params=paramLif, vars=varLif
+        params=lifParam, vars=lifVar
     )
     popVar2.spike_recording_enabled = True
 

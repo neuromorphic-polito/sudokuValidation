@@ -18,7 +18,7 @@ model = GeNNModel(precision='float', model_name=f'.wta', backend=backend)
 model.dt = 1.0  # ms
 
 ##### Neuron parameters #####
-paramLif = {
+lifParam = {
     'C': 0.25,  # nF
     'TauM': 20.0,  # ms
     'Ioffset': 0.3,  # nA
@@ -27,8 +27,8 @@ paramLif = {
     'Vreset': -70.0,  # mV
     'TauRefrac': 2.0,  # ms
 }
-varLif = {
-    'V': paramLif['Vrest'],  # mV
+lifVar = {
+    'V': lifParam['Vrest'],  # mV
     'RefracTime': 0.0,  # ms
 }
 
@@ -40,7 +40,7 @@ popVar = model.add_neuron_population(
     pop_name='popVar',
     num_neurons=neuronsVar*neuronsPop,
     neuron='LIF',
-    params=paramLif, vars=varLif
+    params=lifParam, vars=lifVar
 )
 popVar.spike_recording_enabled = True
 
